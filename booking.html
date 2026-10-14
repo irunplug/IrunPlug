@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12372A">
+  <title>Book an Appointment | IRUNPLUG</title>
+
+  <style>
+    :root {
+      --forest: #12372A;
+      --money: #7DAD72;
+      --champagne: #D8C29D;
+      --black: #171717;
+      --gold: #D4AF37;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--champagne);
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background: var(--forest);
+      border-bottom: 2px solid var(--gold);
+      padding: 25px 15px;
+      text-align: center;
+    }
+
+    .logo {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: 4px;
+    }
+
+    .tagline {
+      color: var(--money);
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 17px 10px;
+    }
+
+    nav a {
+      color: var(--champagne);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 35px 20px;
+      background: linear-gradient(140deg, var(--forest), var(--black));
+    }
+
+    .hero h1 { font-size: 36px; }
+
+    .hero span { color: var(--money); }
+
+    .hero p {
+      line-height: 1.7;
+      color: #eee6d8;
+    }
+
+    .form-wrap {
+      max-width: 620px;
+      margin: 25px auto 45px;
+      padding: 0 16px;
+    }
+
+    form {
+      padding: 24px 18px;
+      background: var(--forest);
+      border: 1px solid var(--money);
+      border-radius: 12px;
+    }
+
+    h2 { color: var(--champagne); }
+
+    .intro {
+      color: var(--money);
+      line-height: 1.6;
+    }
+
+    label {
+      display: block;
+      margin: 18px 0 8px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #8b9b8c;
+      border-radius: 5px;
+      background: #fffaf0;
+      color: var(--black);
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .policy {
+      margin-top: 24px;
+      padding: 17px;
+      border: 1px solid var(--gold);
+      border-radius: 7px;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .policy strong {
+      color: var(--gold);
+      font-size: 23px;
+    }
+
+    .agree {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+
+    .agree input {
+      width: 20px;
+      min-width: 20px;
+      margin-top: 2px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 16px;
+      background: var(--gold);
+      color: var(--black);
+      border: 0;
+      border-radius: 5px;
+      font-weight: 900;
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 25px 15px;
+      line-height: 1.9;
+    }
+
+    .contact a { color: var(--money); }
+
+    footer {
+      padding: 22px;
+      border-top: 1px solid var(--gold);
+      text-align: center;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <p class="logo">IRUNPLUG</p>
+    <div class="tagline">PRETTY &amp; PLUGGED</div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#booking">Book Now</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <p class="tagline">BEAUTY • BUSINESS • MONEY MOVES</p>
+    <h1>BOOK YOUR <span>LOOK.</span></h1>
+    <p>Your next style starts here. Choose your service<br>
+       and request your preferred appointment.</p>
+  </section>
+
+  <main class="form-wrap" id="booking">
+    <form
+      action="https://formsubmit.co/Irunplug@gmail.com"
+      method="POST">
+
+      <input type="hidden" name="_subject"
+        value="New IRUNPLUG Booking Request">
+
+      <h2>Appointment Request</h2>
+      <p class="intro">
+        Complete the details below to request your appointment.
+        Your appointment is not confirmed until we contact you.
+      </p>
+
+      <label for="name">Full Name *</label>
+      <input id="name" name="Client Name"
+        autocomplete="name" required>
+
+      <label for="phone">Phone Number *</label>
+      <input id="phone" name="Client Phone"
+        type="tel" autocomplete="tel" required>
+
+      <label for="email">Email Address *</label>
+      <input id="email" name="Client Email"
+        type="email" autocomplete="email" required>
+
+      <label for="service">Choose Your Service *</label>
+      <select id="service" name="Requested Service" required>
+        <option value="">Select a hairstyle</option>
+        <option>Knotless Braids</option>
+        <option>Box Braids</option>
+        <option>Boho Braids</option>
+        <option>Cornrows</option>
+        <option>Passion Twists</option>
+        <option>Other Twists</option>
+        <option>Loc Retwist</option>
+        <option>Starter Locs</option>
+        <option>Wicks Maintenance</option>
+        <option>Sew-in</option>
+        <option>Quick Weave</option>
+        <option>Wig Install</option>
+        <option>Kids Hairstyles</option>
+        <option>Other Service</option>
+      </select>
+
+      <label for="date">Preferred Appointment Date *</label>
+      <input id="date" name="Preferred Date"
+        type="date" required>
+
+      <label for="time">Preferred Appointment Time *</label>
+      <select id="time" name="Preferred Time" required>
+        <option value="">Select a time</option>
+        <option>9:00 AM</option>
+        <option>10:00 AM</option>
+        <option>11:00 AM</option>
+        <option>12:00 PM</option>
+        <option>1:00 PM</option>
+        <option>2:00 PM</option>
+        <option>3:00 PM</option>
+        <option>4:00 PM</option>
+        <option>5:00 PM</option>
+        <option>6:00 PM</option>
+      </select>
+
+      <label for="length">Hair Length / Style Details</label>
+      <input id="length" name="Hair Length and Style Details"
+        placeholder="Example: small, waist length">
+
+      <label for="notes">Additional Requests</label>
+      <textarea id="notes" name="Additional Requests"
+        placeholder="Tell us anything we should know about your style."></textarea>
+
+      <div class="policy">
+        <strong>$20 DEPOSIT REQUIRED</strong>
+        <p>
+          A $20 deposit is required to secure your appointment.
+          The deposit is separate from your remaining service
+          balance. We will contact you with confirmation and
+          deposit payment instructions.
+        </p>
+        <p>
+          Appointment location will be provided after booking
+          arrangements are confirmed.
+        </p>
+      </div>
+
+      <label class="agree">
+        <input type="checkbox" name="Deposit Policy Acknowledged"
+          value="Yes" required>
+        <span>I understand the $20 deposit policy and that
+          submitting this form does not confirm my appointment.</span>
+      </label>
+
+      <button type="submit">SUBMIT BOOKING REQUEST</button>
+    </form>
+  </main>
+
+  <section class="contact" id="contact">
+    <h2>LET'S GET YOU PLUGGED IN</h2>
+    <p>Questions about your appointment?</p>
+    <p>
+      Email:
+      <a href="mailto:Irunplug@gmail.com">Irunplug@gmail.com</a>
+      <br>
+      Call:
+      <a href="tel:8649169151">864-916-9151</a>
+    </p>
+  </section>
+
+  <footer>
+    IRUNPLUG · PRETTY &amp; PLUGGED
+    <p>Money Moves Only.</p>
+    <p>&copy; 2026 IRUNPLUG</p>
+  </footer>
+
+  <script>
+    const dateInput = document.getElementById("date");
+    const today = new Date();
+    const localToday = [
+      today.getFullYear(),
+      String(today.getMonth() + 1).padStart(2, "0"),
+      String(today.getDate()).padStart(2, "0")
+    ].join("-");
+    dateInput.min = localToday;
+  </script>
+</body>
+</html>
