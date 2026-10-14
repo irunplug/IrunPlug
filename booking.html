@@ -3,10 +3,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#12372A">
-  <title>Book an Appointment | IRUNPLUG</title>
-
+  <title>Book Your Appointment | IRUNPLUG</title>
+  <meta name="description" content="Request your next hairstyle appointment with IRUNPLUG — Pretty & Plugged.">
   <style>
     :root {
       --forest: #12372A;
@@ -14,298 +14,503 @@
       --champagne: #D8C29D;
       --black: #171717;
       --gold: #D4AF37;
+      --cream: #fffaf0;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
       background: var(--black);
-      color: var(--champagne);
-      font-family: Arial, sans-serif;
+      color: var(--cream);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: var(--gold);
+      color: var(--black);
+      text-align: center;
+      padding: 9px 12px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
     header {
       background: var(--forest);
-      border-bottom: 2px solid var(--gold);
-      padding: 25px 15px;
+      border-bottom: 1px solid var(--gold);
+      padding: 20px 16px;
       text-align: center;
     }
 
     .logo {
-      margin: 0;
-      font-size: 36px;
+      color: var(--gold);
+      font-size: clamp(27px, 7vw, 42px);
       font-weight: 900;
-      letter-spacing: 4px;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 0 #000, 0 0 12px #d4af3740;
     }
 
     .tagline {
-      color: var(--money);
-      letter-spacing: 4px;
-      font-size: 12px;
-      margin-top: 8px;
+      color: var(--champagne);
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin-top: 3px;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 24px;
-      padding: 17px 10px;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 13px 10px;
+      background: #101d17;
+      font-size: 13px;
     }
 
-    nav a {
-      color: var(--champagne);
-      text-decoration: none;
-      font-size: 14px;
+    nav a:hover {
+      color: var(--gold);
     }
 
     .hero {
       text-align: center;
-      padding: 35px 20px;
-      background: linear-gradient(140deg, var(--forest), var(--black));
+      padding: 45px 20px 35px;
+      background:
+        radial-gradient(ellipse at top, #24513b 0%, transparent 65%),
+        var(--black);
     }
 
-    .hero h1 { font-size: 36px; }
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
 
-    .hero span { color: var(--money); }
+    h1 {
+      font-size: clamp(32px, 8vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
 
     .hero p {
-      line-height: 1.7;
-      color: #eee6d8;
+      max-width: 530px;
+      margin: 0 auto;
+      color: var(--champagne);
+      font-size: 15px;
     }
 
-    .form-wrap {
-      max-width: 620px;
-      margin: 25px auto 45px;
-      padding: 0 16px;
+    .sparkle {
+      color: var(--gold);
     }
 
-    form {
-      padding: 24px 18px;
-      background: var(--forest);
-      border: 1px solid var(--money);
-      border-radius: 12px;
+    .booking-wrap {
+      width: min(760px, 92%);
+      margin: 0 auto 45px;
     }
 
-    h2 { color: var(--champagne); }
-
-    .intro {
-      color: var(--money);
-      line-height: 1.6;
-    }
-
-    label {
-      display: block;
-      margin: 18px 0 8px;
+    .notice {
+      background: #1c2d22;
+      border: 1px solid #53734c;
+      border-left: 4px solid var(--gold);
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 22px;
       font-size: 14px;
-      font-weight: bold;
     }
 
-    input, select, textarea {
+    .notice strong {
+      color: var(--gold);
+    }
+
+    .form-card {
+      background: #20211e;
+      border: 1px solid #8b7130;
+      border-radius: 18px;
+      padding: clamp(18px, 5vw, 32px);
+      box-shadow: 0 12px 35px #0008;
+    }
+
+    .form-card h2 {
+      color: var(--gold);
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    .form-intro {
+      color: #c8c6bb;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label,
+    .field-label {
       display: block;
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 7px;
+      color: var(--champagne);
+    }
+
+    input,
+    select,
+    textarea {
       width: 100%;
+      background: #121512;
+      color: #fffaf0;
+      border: 1px solid #52634f;
+      border-radius: 9px;
       padding: 13px;
-      border: 1px solid #8b9b8c;
-      border-radius: 5px;
-      background: #fffaf0;
-      color: var(--black);
-      font-size: 16px;
+      font: inherit;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px #d4af3725;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #a5a69c;
+    }
+
+    select option {
+      background: #171717;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
 
     textarea {
-      min-height: 100px;
+      min-height: 110px;
       resize: vertical;
     }
 
-    .policy {
-      margin-top: 24px;
-      padding: 17px;
-      border: 1px solid var(--gold);
-      border-radius: 7px;
-      line-height: 1.7;
-      font-size: 14px;
-    }
-
-    .policy strong {
-      color: var(--gold);
-      font-size: 23px;
-    }
-
-    .agree {
+    .check-row {
       display: flex;
-      gap: 10px;
       align-items: flex-start;
-      line-height: 1.5;
+      gap: 10px;
+      margin: 18px 0;
+      color: #dedbd0;
+      font-size: 13px;
     }
 
-    .agree input {
-      width: 20px;
-      min-width: 20px;
+    .check-row input {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
       margin-top: 2px;
+      accent-color: var(--gold);
     }
 
-    button {
+    .submit-btn {
+      display: block;
       width: 100%;
-      margin-top: 22px;
-      padding: 16px;
-      background: var(--gold);
-      color: var(--black);
-      border: 0;
-      border-radius: 5px;
-      font-weight: 900;
+      border: none;
+      border-radius: 9px;
+      padding: 15px;
+      background: linear-gradient(110deg, #d8c29d, #d4af37, #f1df9a);
+      color: #171717;
       font-size: 15px;
+      font-weight: 900;
       letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      filter: brightness(1.08);
+    }
+
+    .small-print {
+      color: #bdbcb2;
+      font-size: 12px;
+      margin-top: 14px;
+      text-align: center;
     }
 
     .contact {
       text-align: center;
-      padding: 25px 15px;
-      line-height: 1.9;
+      padding: 30px 15px;
+      background: var(--forest);
+      border-top: 1px solid var(--gold);
     }
 
-    .contact a { color: var(--money); }
+    .contact h2 {
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      margin: 5px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .contact a {
+      color: var(--champagne);
+    }
 
     footer {
-      padding: 22px;
-      border-top: 1px solid var(--gold);
       text-align: center;
+      padding: 18px 12px;
+      color: #bcb9ac;
       font-size: 12px;
+      background: #10110f;
+    }
+
+    @media (max-width: 520px) {
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      nav {
+        gap: 14px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="top-bar">
+    ✦ PRETTY • PLUGGED • ALWAYS BOOKED ✦
+  </div>
+
   <header>
-    <p class="logo">IRUNPLUG</p>
-    <div class="tagline">PRETTY &amp; PLUGGED</div>
+    <a href="index.html" aria-label="IRUNPLUG homepage">
+      <div class="logo">✦ IRUNPLUG ✦</div>
+      <div class="tagline">PRETTY &amp; PLUGGED</div>
+    </a>
   </header>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="#booking">Book Now</a>
+    <a href="index.html#services">Services</a>
+    <a href="booking.html">Book Now</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section class="hero">
-    <p class="tagline">BEAUTY • BUSINESS • MONEY MOVES</p>
-    <h1>BOOK YOUR <span>LOOK.</span></h1>
-    <p>Your next style starts here. Choose your service<br>
-       and request your preferred appointment.</p>
+    <div class="eyebrow">✦ YOUR NEXT LOOK STARTS HERE ✦</div>
+    <h1>LET'S GET YOU<br><span>PLUGGED IN.</span></h1>
+    <p>
+      Fresh style. Clean parts. Boss energy.
+      Fill out your appointment request and let's get your next look together.
+    </p>
   </section>
 
-  <main class="form-wrap" id="booking">
-    <form
-      action="https://formsubmit.co/Irunplug@gmail.com"
-      method="POST">
+  <main class="booking-wrap">
+    <div class="notice">
+      <strong>✦ BEFORE YOU BOOK</strong><br>
+      A $20 deposit is required to secure your appointment.
+      Please arrive with your hair washed and blow-dried unless
+      we have discussed otherwise. Your location will be provided
+      after your appointment is confirmed.
+    </div>
 
-      <input type="hidden" name="_subject"
-        value="New IRUNPLUG Booking Request">
-
-      <h2>Appointment Request</h2>
-      <p class="intro">
-        Complete the details below to request your appointment.
-        Your appointment is not confirmed until we contact you.
+    <section class="form-card">
+      <h2>Book Your Look 💎</h2>
+      <p class="form-intro">
+        Complete every required field so we can review your request.
       </p>
 
-      <label for="name">Full Name *</label>
-      <input id="name" name="Client Name"
-        autocomplete="name" required>
+      <form
+        action="https://formsubmit.co/Irunplug@gmail.com"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="New IRUNPLUG Appointment Request">
+        <input type="hidden" name="_template" value="table">
 
-      <label for="phone">Phone Number *</label>
-      <input id="phone" name="Client Phone"
-        type="tel" autocomplete="tel" required>
+        <div class="field">
+          <label for="name">Full Name *</label>
+          <input
+            id="name"
+            name="Full Name"
+            type="text"
+            placeholder="Enter your full name"
+            autocomplete="name"
+            required
+          >
+        </div>
 
-      <label for="email">Email Address *</label>
-      <input id="email" name="Client Email"
-        type="email" autocomplete="email" required>
+        <div class="two-col">
+          <div class="field">
+            <label for="phone">Phone Number *</label>
+            <input
+              id="phone"
+              name="Phone Number"
+              type="tel"
+              placeholder="Your best contact number"
+              autocomplete="tel"
+              required
+            >
+          </div>
 
-      <label for="service">Choose Your Service *</label>
-      <select id="service" name="Requested Service" required>
-        <option value="">Select a hairstyle</option>
-        <option>Knotless Braids</option>
-        <option>Box Braids</option>
-        <option>Boho Braids</option>
-        <option>Cornrows</option>
-        <option>Passion Twists</option>
-        <option>Other Twists</option>
-        <option>Loc Retwist</option>
-        <option>Starter Locs</option>
-        <option>Wicks Maintenance</option>
-        <option>Sew-in</option>
-        <option>Quick Weave</option>
-        <option>Wig Install</option>
-        <option>Kids Hairstyles</option>
-        <option>Other Service</option>
-      </select>
+          <div class="field">
+            <label for="email">Email Address *</label>
+            <input
+              id="email"
+              name="Email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+        </div>
 
-      <label for="date">Preferred Appointment Date *</label>
-      <input id="date" name="Preferred Date"
-        type="date" required>
+        <div class="field">
+          <label for="service">Choose Your Service *</label>
+          <select id="service" name="Requested Service" required>
+            <option value="">Select your hairstyle</option>
+            <option>Knotless Braids</option>
+            <option>Box Braids</option>
+            <option>Boho Braids</option>
+            <option>Cornrows</option>
+            <option>Loc Retwist</option>
+            <option>Starter Locs</option>
+            <option>Wicks Maintenance</option>
+            <option>Passion Twists</option>
+            <option>Sew-In</option>
+            <option>Quick Weave</option>
+            <option>Wig Install</option>
+            <option>Kids Hairstyle</option>
+            <option>Other Service</option>
+          </select>
+        </div>
 
-      <label for="time">Preferred Appointment Time *</label>
-      <select id="time" name="Preferred Time" required>
-        <option value="">Select a time</option>
-        <option>9:00 AM</option>
-        <option>10:00 AM</option>
-        <option>11:00 AM</option>
-        <option>12:00 PM</option>
-        <option>1:00 PM</option>
-        <option>2:00 PM</option>
-        <option>3:00 PM</option>
-        <option>4:00 PM</option>
-        <option>5:00 PM</option>
-        <option>6:00 PM</option>
-      </select>
+        <div class="two-col">
+          <div class="field">
+            <label for="date">Preferred Date *</label>
+            <input
+              id="date"
+              name="Preferred Date"
+              type="date"
+              required
+            >
+          </div>
 
-      <label for="length">Hair Length / Style Details</label>
-      <input id="length" name="Hair Length and Style Details"
-        placeholder="Example: small, waist length">
+          <div class="field">
+            <label for="time">Preferred Time *</label>
+            <select id="time" name="Preferred Time" required>
+              <option value="">Choose a time</option>
+              <option>9:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>3:00 PM</option>
+              <option>4:00 PM</option>
+              <option>5:00 PM</option>
+              <option>6:00 PM</option>
+            </select>
+          </div>
+        </div>
 
-      <label for="notes">Additional Requests</label>
-      <textarea id="notes" name="Additional Requests"
-        placeholder="Tell us anything we should know about your style."></textarea>
+        <div class="field">
+          <label for="length">Desired Length, Size &amp; Style</label>
+          <input
+            id="length"
+            name="Length Size and Style Details"
+            type="text"
+            placeholder="Example: small, waist length, middle part"
+          >
+        </div>
 
-      <div class="policy">
-        <strong>$20 DEPOSIT REQUIRED</strong>
-        <p>
-          A $20 deposit is required to secure your appointment.
-          The deposit is separate from your remaining service
-          balance. We will contact you with confirmation and
-          deposit payment instructions.
+        <div class="field">
+          <label for="hair">Hair Included or Bringing Your Own?</label>
+          <select id="hair" name="Hair Preference">
+            <option value="">Choose an option</option>
+            <option>I will bring my own hair</option>
+            <option>I need hair included</option>
+            <option>Please discuss with me</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="notes">Extra Details or Questions</label>
+          <textarea
+            id="notes"
+            name="Additional Details"
+            placeholder="Tell us anything we should know about your appointment."
+          ></textarea>
+        </div>
+
+        <label class="check-row">
+          <input
+            type="checkbox"
+            name="Deposit Policy Acknowledged"
+            value="Yes"
+            required
+          >
+          <span>
+            I understand that a $20 deposit is required to secure my
+            appointment and that this is a request, not a confirmed booking.
+          </span>
+        </label>
+
+        <label class="check-row">
+          <input
+            type="checkbox"
+            name="Hair Preparation Acknowledged"
+            value="Yes"
+            required
+          >
+          <span>
+            I understand that I should arrive with my hair washed and
+            blow-dried unless other arrangements have been made.
+          </span>
+        </label>
+
+        <button class="submit-btn" type="submit">
+          SEND APPOINTMENT REQUEST ✦
+        </button>
+
+        <p class="small-print">
+          Please wait for a response confirming your date and time
+          before considering your appointment booked.
         </p>
-        <p>
-          Appointment location will be provided after booking
-          arrangements are confirmed.
-        </p>
-      </div>
-
-      <label class="agree">
-        <input type="checkbox" name="Deposit Policy Acknowledged"
-          value="Yes" required>
-        <span>I understand the $20 deposit policy and that
-          submitting this form does not confirm my appointment.</span>
-      </label>
-
-      <button type="submit">SUBMIT BOOKING REQUEST</button>
-    </form>
+      </form>
+    </section>
   </main>
 
   <section class="contact" id="contact">
-    <h2>LET'S GET YOU PLUGGED IN</h2>
-    <p>Questions about your appointment?</p>
-    <p>
-      Email:
-      <a href="mailto:Irunplug@gmail.com">Irunplug@gmail.com</a>
-      <br>
-      Call:
-      <a href="tel:8649169151">864-916-9151</a>
+    <h2>LET'S CONNECT ✦</h2>
+    <p>Have questions before booking?</p>
+    <p><a href="mailto:Irunplug@gmail.com">Irunplug@gmail.com</a></p>
+    <p><a href="tel:+18649169151">(864) 916-9151</a></p>
+    <p style="margin-top: 14px; color: #D8C29D;">
+      Pretty looks. Plugged energy. Money Moves.
     </p>
   </section>
 
   <footer>
-    IRUNPLUG · PRETTY &amp; PLUGGED
-    <p>Money Moves Only.</p>
-    <p>&copy; 2026 IRUNPLUG</p>
+    © 2026 IRUNPLUG — PRETTY &amp; PLUGGED. All rights reserved.
   </footer>
 
   <script>
@@ -316,6 +521,7 @@
       String(today.getMonth() + 1).padStart(2, "0"),
       String(today.getDate()).padStart(2, "0")
     ].join("-");
+
     dateInput.min = localToday;
   </script>
 </body>
