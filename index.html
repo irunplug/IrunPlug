@@ -20,8 +20,9 @@ header{position:sticky;top:0;z-index:10;background:#171717;border-bottom:2px sol
 .logo{display:block;color:var(--champagne);font-weight:1000;font-size:clamp(25px,5vw,35px);letter-spacing:4px;text-shadow:2px 2px #604b17}
 .tagline{display:block;color:var(--money);font-size:10px;letter-spacing:4px;margin-top:8px;font-weight:bold}
 nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:18px}
-nav a{text-decoration:none;font-size:12px;font-weight:bold;color:#f5e8ce}
-nav a:hover{color:var(--gold)}
+nav a{text-decoration:none;font-size:12px;font-weight:bold;color:var(--money);letter-spacing:1px;transition:color .2s,text-shadow .2s}
+nav a:hover{color:var(--gold);text-shadow:0 0 10px #D4AF3788}
+nav a:not(.navbook)::after{content:" ✦";color:var(--gold);font-size:9px}
 .navbook,.button{display:inline-block;text-align:center;padding:13px 19px;background:linear-gradient(135deg,#f4df9b,var(--gold));border:1px solid #ffedac;border-radius:5px;color:#171717;text-decoration:none;font-weight:900;font-size:12px;letter-spacing:1px;box-shadow:0 6px 20px #0004}
 .hero{position:relative;overflow:hidden;text-align:center;min-height:530px;padding:90px 20px 75px;background:radial-gradient(ellipse at 50% 0%,#28563d 0%,#12372A 37%,#171717 83%)}
 .hero:before,.hero:after{position:absolute;color:#D4AF3766;font-size:75px;content:"✧";pointer-events:none}
